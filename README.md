@@ -1,1 +1,0 @@
-# assolit-main
