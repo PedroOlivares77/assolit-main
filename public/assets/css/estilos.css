@@ -1,0 +1,17 @@
+#logo {
+  width: 60px;
+  height: 60px;
+}
+
+footer .logo {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#logo-footer {
+  width: 150px;
+  height: 150px;
+}
