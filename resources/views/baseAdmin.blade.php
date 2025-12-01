@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" type="text/css" href="{{asset ('assets/css/estilos.css') }}"/>
     <link rel="icon" href="{{ asset('assets/media/img/favicon.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap-5.3.6/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('assets/css/estilos.css') }}"/>
     <title>@yield('titulo')</title>
     <script src="{{ asset('/vendor/bootstrap-5.3.6/dist/js/bootstrap.bundle.min.js')}}"></script>
     <script src="https://kit.fontawesome.com/9f4bf3af88.js" crossorigin="anonymous"></script>
@@ -77,24 +78,14 @@
                 @if(auth()->user())
                     @if(auth()->user()->hasRole('admin'))
                         <ul>
-                                <li><a class="dropdown-item" href="{{route('roles')}}">Roles</a></li>
-                                <li><a class="dropdown-item" href="{{route('usuarios')}}">Usuarios</a></li>
-                                <li><a class="dropdown-item" href="{{route('obras')}}">Obras</a></li>
-                                <li><a class="dropdown-item" href="{{route('ejemplares')}}">Ejemplares</a></li>
-                                <li><a class="dropdown-item" href="{{route('autores')}}">Autores</a></li>
-                                <li><a class="dropdown-item" href="{{route('obrasAutores')}}">Obras por autor</a></li>
-                                <li><a class="dropdown-item" href="{{route('idiomas')}}">Idiomas</a></li>
-                                <li><a class="dropdown-item" href="{{route('tipos')}}">Tipos</a></li>
-                                <li><a class="dropdown-item" href="{{route('editoriales')}}">Editoriales</a></li>
-                                <li><a class="dropdown-item" href="{{route('paises')}}">Paises</a></li>
-                                <li><a class="dropdown-item" href="{{route('prestamos')}}">Préstamos</a></li>
-                                <li><a class="dropdown-item" href="{{route('salas')}}">Salas</a></li>
-                                <li><a class="dropdown-item" href="{{route('mesas')}}">Mesas</a></li>
-                                <li><a class="dropdown-item" href="{{route('reservas')}}">Reservas</a></li>
-                                <li><a class="dropdown-item" href="{{route('dashboard')}}">Estadísticas</a></li>
+                            <li><a class="dropdown-item" href="{{route('users')}}">Users</a></li>
+                            <li><a class="dropdown-item" href="{{route('roles')}}">Roles</a></li>
+                            <li><a class="dropdown-item" href="{{route('viviendas')}}">Viviendas</a></li>
+                            <li><a class="dropdown-item" href="{{route('usuarios')}}">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="{{route('medicamentos')}}">Medicamentos</a></li>
                         </ul>
                     @else
-                        <li><a href="{{route('index')}}">Catálogo</a></li>  
+                        <li><a href="{{route('index')}}">Inicio</a></li>  
                     @endif
                 
                 @endif
@@ -113,10 +104,10 @@
             </div>
 
             <div class="col-12 col-md-3 mt-3">
-                <p><a href="{{route('contacto')}}" class="link-underline link-underline-opacity-0 enlace-footer">
+                <p><a href="" class="link-underline link-underline-opacity-0 enlace-footer">
                     Contacto
                 </a></p>
-                <p><a href="{{route('contacto')}}#horario" class="link-underline link-underline-opacity-0 enlace-footer">
+                <p><a href="" class="link-underline link-underline-opacity-0 enlace-footer">
                     Horario de apertura
                 </a></p>
             </div>

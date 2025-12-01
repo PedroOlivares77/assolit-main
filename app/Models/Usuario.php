@@ -13,9 +13,10 @@ class Usuario extends Model
         return $this->belongsTo(Vivienda::class, 'id_vivienda');
     }
 
-    public function medicaciones()
+    public function medicamentos()
     {
-        return $this->belongsToMany(Medicamento::class, 'usuarios_medicamentos', 'id_usuarios', 'id_medicamento', 'id', 'id');
+        return $this->belongsToMany(Medicamento::class, 'usuarios_medicamentos', 'id_usuario', 'id_medicamento', 'id', 'id')
+        ->withPivot('desayuno', 'comida', 'cena')
+        ->withTimestamps();
     }
-    
 }

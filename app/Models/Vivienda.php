@@ -8,9 +8,15 @@ class Vivienda extends Model
 {
     protected $table = 'viviendas';
 
-    public function usuarios()
+    public function usuarios() // FK 1 a muchos
     {
-        return $this->belongsToMany(User::class, 'viviendas_users', 'id_vivienda', 'id_user', 'id', 'id');
+        return $this->hasMany(Usuario::class, 'id_vivienda');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'viviendas_users', 'id_vivienda', 'id_user', 'id', 'id')
+        ->withTimestamps();
     }
 
     public function opiniones()
@@ -22,5 +28,4 @@ class Vivienda extends Model
     {
         return $this->hasMany(Post_empleo::class, 'id_vivienda');
     }
-
 }
