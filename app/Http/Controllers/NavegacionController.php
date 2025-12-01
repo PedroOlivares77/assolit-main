@@ -21,4 +21,8 @@ class NavegacionController extends Controller
     public function conocenos(){
         return view("conocenos");
     }
+
+    public function noPermitido(){
+        return view('noPermitido');
+    }
 }
