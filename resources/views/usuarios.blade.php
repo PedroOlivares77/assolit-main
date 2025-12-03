@@ -26,7 +26,7 @@
                         <td>{{$usuario->nombre}} {{$usuario->apellidos}}</td>
                         <td>{{$usuario->fecha_nacimiento}}</td>
                         <td>{{$usuario->patologia}}</td>
-                        <td>{{$usuario->vivienda->nombre}}</td>
+                        <td>{{$usuario->vivienda->nombre ?? ''}}</td>
                         <td>
                             @foreach($usuario->medicamentos as $med)
                             <div>
