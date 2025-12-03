@@ -84,11 +84,6 @@ class UsersController extends Controller
         return redirect('/admin/users');
     }
 
-    public function mostrarMiAreaCliente()
-    {
-        return view("miAreaCliente");
-    }
-
     public function mostrarPsiquiatra()
     {
         return view("miAreaPsiquiatra");

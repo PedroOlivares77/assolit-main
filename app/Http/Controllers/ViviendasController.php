@@ -19,22 +19,20 @@ class ViviendasController extends Controller
     {
         $vivienda = $id ? Vivienda::find($id) : null;
 
-        // Users: solo psiquiatra y trabajador social
-        $users = User::whereIn('id_rol', [2, 3])->get();
+        // SOLO Users con rol 2 y 3
+        $usersDisponibles = User::whereIn('id_rol', [2, 3])->get();
 
-        // Usuarios: los que no tienen vivienda asignada
-        $usuariosDisponibles = Usuario::whereNull('id_vivienda')->get();
+        // SOLO pacientes que no están en vivienda alguna
+        $usuariosDisponibles = Usuario::where(function ($q) use ($vivienda) {
+            $q->whereNull('id_vivienda'); // sin vivienda
+            if ($vivienda) {
+                $q->orWhere('id_vivienda', $vivienda->id); // o ya asignados a esta vivienda
+            }
+        })->get();
 
-        // Si hay vivienda (editar), los asignados
-        $usersAsignados = $vivienda ? $vivienda->users : collect();
-        $usuariosAsignados = $vivienda ? $vivienda->usuarios : collect();
-
-        // Users disponibles: filtrar según reglas
-        $usersDisponibles = $users->filter(function ($user) use ($vivienda) {
-            if ($user->rol_id == 2) return true; // psiquiatra
-            if ($user->rol_id == 3) return !$user->vivienda_id || ($vivienda && $user->vivienda_id == $vivienda->id);
-            return false;
-        });
+        // Los asignados en edición
+        $usersAsignados = $vivienda ? $vivienda->users()->pluck('users.id') : collect();
+        $usuariosAsignados = $vivienda ? Usuario::where('id_vivienda', $vivienda->id)->pluck('id') : collect();
 
         return view('formularioVivienda', compact(
             'vivienda',
@@ -44,6 +42,7 @@ class ViviendasController extends Controller
             'usuariosAsignados'
         ));
     }
+
 
     public function mostrarFormIns()
     {
@@ -66,13 +65,13 @@ class ViviendasController extends Controller
         $vivienda->lugar = $request->lugar;
         $vivienda->save();
 
-        if ($request->has('users')) {
-            $vivienda->users()->sync($request->users);
-        }
+        // Guardamos Users en PIVOT
+        $vivienda->users()->sync($request->users ?? []);
 
-        if ($request->has('usuarios')) {
-            $vivienda->usuarios()->sync($request->usuarios);
-        }
+        // Asignamos pacientes a la vivienda en la FK
+        Usuario::whereIn('id', $request->usuarios ?? [])->update([
+            'id_vivienda' => $vivienda->id
+        ]);
 
         return redirect('/admin/viviendas');
     }
@@ -88,14 +87,19 @@ class ViviendasController extends Controller
         ]);
 
         $vivienda = Vivienda::findOrFail($id);
-        $vivienda->nombre = $request->nombre;
+
         $vivienda->capacidad = $request->capacidad;
         $vivienda->lugar = $request->lugar;
         $vivienda->save();
 
+        // 1. actualizar pivot de Users
         $vivienda->users()->sync($request->users ?? []);
-        $vivienda->usuarios()->sync($request->usuarios ?? []);
 
+        // 2. quitar pacientes antiguos (solo vivienda, no borrar modelos)
+        Usuario::where('id_vivienda', $vivienda->id)->update(['id_vivienda' => null]);
+
+        // 3. reasignar pacientes marcados en form
+        Usuario::whereIn('id', $request->usuarios ?? [])->update(['id_vivienda' => $vivienda->id]);
 
         return redirect('/admin/viviendas');
     }
@@ -103,8 +107,10 @@ class ViviendasController extends Controller
     public function eliminar($id)
     {
         $vivienda = Vivienda::findOrFail($id);
-        $vivienda->users()->detach();
-        $vivienda->usuarios()->detach();
+
+        $vivienda->users()->detach(); // pivot Users
+        Usuario::where('id_vivienda', $vivienda->id)->update(['id_vivienda' => null]); // FK pacientes
+
         $vivienda->delete();
 
         return redirect('/admin/viviendas');

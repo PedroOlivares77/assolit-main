@@ -27,13 +27,13 @@ public function iniciarSesion(Request $request){
             $user = Auth::user();
 
             if($user->rol->tipo == 'admin'){
-                return redirect('/admin');
+                return redirect('/');
             }elseif($user->rol->tipo == 'psiquiatra'){
-                return redirect('/trabajador-psiquiatra');
+                return redirect('/');
             }elseif($user->rol->tipo == 'trabajador_social'){
-                return redirect('/trabajador-social');
+                return redirect('/');
             }else{
-                return redirect('/area-cliente');
+                return redirect('/');
             }
         } else {
             $errormsg = "El email o la contraseña no son correctos.";

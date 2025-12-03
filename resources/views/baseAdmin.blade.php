@@ -83,6 +83,9 @@
                             <li><a class="dropdown-item" href="{{route('viviendas')}}">Viviendas</a></li>
                             <li><a class="dropdown-item" href="{{route('usuarios')}}">Usuarios</a></li>
                             <li><a class="dropdown-item" href="{{route('medicamentos')}}">Medicamentos</a></li>
+                            <li><a class="dropdown-item" href="{{route('opiniones')}}">Opiniones</a></li>
+                            <li><a class="dropdown-item" href="{{route('posts')}}">Posts Empleo</a></li>
+                            <li><a class="dropdown-item" href="{{route('solicitudes')}}">Solicitudes</a></li>
                         </ul>
                     @else
                         <li><a href="{{route('index')}}">Inicio</a></li>  
