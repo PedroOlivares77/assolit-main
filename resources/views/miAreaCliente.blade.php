@@ -1,5 +1,5 @@
 @extends('baseUsuario')
-@section('título', 'Área Cliente')
+@section('titulo', 'Área Cliente')
 @section('contenido')
 
 <h2 class="text-center mb-4">Mis solicitudes enviadas</h2>

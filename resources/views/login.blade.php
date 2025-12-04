@@ -1,5 +1,5 @@
 @extends('baseUsuario')
-@section('título', 'Login')
+@section('titulo', 'Login')
 @section('contenido')
 
     <h3 class="titulo mt-5 text-center">Iniciar sesión</h3>

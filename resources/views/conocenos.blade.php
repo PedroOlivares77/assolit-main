@@ -1,5 +1,5 @@
 @extends('baseUsuario')
-@section('título', 'Conocenos')
+@section('titulo', 'Conocenos')
 @section('contenido')
 
 <div style="border: 3px solid black;">
