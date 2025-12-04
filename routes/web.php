@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function() {
 
 Route::middleware(['auth', 'rol:psiquiatra'])->group(function() {
     Route::get('/trabajador-psiquiatra', [TrabajadoresController::class, 'mostrarPsiquiatra'])->name("miAreaPsiquiatra");
+    Route::post('/trabajador-psiquiatra/{usuario}', [TrabajadoresController::class, 'actualizarPaciente'])->name("miAreaPsiquiatraPost");
 });
 
 Route::middleware(['auth', 'rol:trabajador_social'])->group(function() {

@@ -1,5 +1,5 @@
 @extends('baseUsuario')
-@section('título', 'Viviendas Tuteladas')
+@section('titulo', 'Viviendas Tuteladas')
 @section('contenido')
 
 <div style="border: 3px solid black;">
