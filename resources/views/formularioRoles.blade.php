@@ -15,40 +15,43 @@
             </form>
             <div id="texto-error" class="text-danger text-center"></div>
         </div>
-    <script>
-        $(document).ready(function(){
+ <script>
+$(document).ready(function() {
 
-            $("#tipo").focus();
+    // Enfocar automáticamente el input tipo
+    $("#tipo").focus();
 
-            function isValid(){
-                var isValid = true;
-                $(".form-validate input").each(function(){
-                    if( $(this).val().trim() === "" ){
-                        $(this).focus();
-                        $(this).css("border-color", "red");
-                        isValid = false;
-                        return isValid;
-                    }
-                });
-                return isValid;
-            }
+    // Función de validación
+    function validarFormulario() {
+        let tipo = $("#tipo").val().trim();
+        let error = "";
 
-            $(".form-validate :submit").click(function (e){
+        // Limpiar estilos anteriores
+        $('#texto-error').html("");
+        $('#tipo').css("border-color", "var(--bs-border-color)");
 
-                $('#texto-error').html("");
-                $('input').css("border-color", "var(--bs-border-color)");
+        if (!tipo) {
+            error = "El campo Tipo es obligatorio.";
+            $("#tipo").css("border-color", "red").focus();
+        }
 
-                e.preventDefault();
-                if(isValid()){
-                    $(".form-validate").submit()
-                }else{
-                    $('#tipo').focus();
-                    $('#tipo').css("border-color", "red");
-                    $('#texto-error').html("No se puede enviar con campos vacíos"); 
-                }
-            });
+        return error;
+    }
 
-            
-        });
-    </script>
+    // Evento submit
+    $(".form-validate").on("submit", function(e) {
+        e.preventDefault();
+
+        let error = validarFormulario();
+
+        if (error) {
+            $("#texto-error").html(error);
+        } else {
+            // Si todo está bien, enviar el formulario
+            this.submit();
+        }
+    });
+
+});
+</script>
 @endsection

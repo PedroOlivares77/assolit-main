@@ -59,11 +59,11 @@ Route::middleware(['auth', 'rol:admin'])->group(function() {
 
     Route::get('/admin/roles', [RolesController::class, 'mostrar'])->name("roles");
     Route::get('/admin/roles/api/listar', [RolesController::class, 'listar'])->name("rolesListar");
-    Route::get('/admin/roles/{id}', [RolesController::class, 'buscar'])->where(array('id' => '[0-9]*'))->name("buscarRol");
+    Route::get('/admin/roles/{id}', [RolesController::class, 'buscar'])->where(array('id' => '[0-9]+'))->name("buscarRol");
     Route::post('/admin/roles/insertar', [RolesController::class, 'insertar'])->name("crearRoles");
-    Route::get('/roles/editar/{id}', [RolesController::class, 'mostrarEditar'])->where(array('id' => '[0-9]*'))->name("mostrarEditarRoles");
-    Route::post('/roles/editar/{id}', [RolesController::class, 'editar'])->where(array('id' => '[0-9]*'));
-    Route::delete('/admin/roles/eliminar/{id}', [RolesController::class, 'eliminar'])->where(array('id' => '[0-9]*'))->name("eliminarRoles");
+    Route::get('/roles/editar/{id}', [RolesController::class, 'mostrarEditar'])->where(array('id' => '[0-9]+'))->name("mostrarEditarRoles");
+    Route::post('/roles/editar/{id}', [RolesController::class, 'editar'])->where(array('id' => '[0-9]+'))->name("editarRoles");
+    Route::delete('/admin/roles/eliminar/{id}', [RolesController::class, 'eliminar'])->where(array('id' => '[0-9]+'))->name("eliminarRoles");
 
     Route::get('/admin/usuarios', [UsuariosController::class, 'mostrar'])->name("usuarios");
     Route::get('/admin/usuarios/insertar', [UsuariosController::class, 'mostrarFormIns'])->name("formularioUsuariosIns");

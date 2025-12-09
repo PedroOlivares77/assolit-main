@@ -25,7 +25,7 @@ class RolesController extends Controller
     public function buscar($id){
         $rol = Rol::where('id', $id)->first();
 
-        return view('buscarRoles', ['rol'=> $rol]);
+        return view('roles', ['rol'=> $rol]);
     }
 
     public function insertar(Request $request){

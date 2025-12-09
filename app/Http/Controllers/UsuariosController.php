@@ -20,7 +20,10 @@ class UsuariosController extends Controller
     {
         $viviendas = Vivienda::all();
         $medicamentos = Medicamento::all();
-        return view('formularioUsuario', ['viviendas' => $viviendas], ['medicamentos' => $medicamentos]);
+        return view('formularioUsuario', [
+            'viviendas' => $viviendas,
+            'medicamentos' => $medicamentos
+        ]);
     }
 
     public function insertar(Request $request)

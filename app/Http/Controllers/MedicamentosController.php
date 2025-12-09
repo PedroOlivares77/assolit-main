@@ -52,7 +52,8 @@ class MedicamentosController extends Controller
             'dosis' => ['required', 'int'],
         ]);
 
-        $medicamento = new Medicamento();
+        $medicamento = Medicamento::findOrFail($id);
+
         $medicamento->nombre = $request->nombre;
         $medicamento->dosis = $request->dosis;
         $medicamento->save();

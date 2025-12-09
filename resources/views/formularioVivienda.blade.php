@@ -68,5 +68,73 @@
 
   </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector("form");
+    const nombre = document.getElementById("nombre");
+    const capacidad = document.getElementById("capacidad");
+    const lugar = document.getElementById("lugar");
+
+    // Crear contenedor de error con el mismo estilo que los anteriores
+    const textoError = document.createElement("div");
+    textoError.id = "texto-error";
+    textoError.className = "text-danger text-center mt-2";
+    form.appendChild(textoError);
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Detener envío hasta validar
+
+        // Limpiar errores previos
+        textoError.textContent = "";
+        [nombre, capacidad, lugar].forEach(i => i.style.borderColor = "");
+
+        const nombreVal = nombre.value.trim();
+        const capacidadVal = capacidad.value.trim();
+        const lugarVal = lugar.value.trim();
+
+        let error = "";
+
+        // VALIDACIONES BÁSICAS (como antes)
+        if (!nombreVal) {
+            error = "El nombre es obligatorio.";
+            nombre.style.borderColor = "red";
+            nombre.focus();
+        }
+        else if (!capacidadVal || parseInt(capacidadVal) <= 0) {
+            error = "La capacidad debe ser mayor que 0.";
+            capacidad.style.borderColor = "red";
+            capacidad.focus();
+        }
+        else if (!lugarVal) {
+            error = "El lugar es obligatorio.";
+            lugar.style.borderColor = "red";
+            lugar.focus();
+        }
+
+        // VALIDACIÓN DE CAPACIDAD vs USUARIOS
+        if (!error) {
+            const capacidadNum = parseInt(capacidadVal);
+            const usuariosMarcados = document.querySelectorAll("input[name='usuarios[]']:checked").length;
+
+            if (usuariosMarcados > capacidadNum) {
+                error = `No puedes asignar más de ${capacidadNum} usuarios.`;
+                capacidad.style.borderColor = "red";
+                capacidad.focus();
+            }
+        }
+
+        // Si hay error → mostrarlo y NO enviar
+        if (error) {
+            textoError.textContent = error;
+            return false;
+        }
+
+        // Si no hay errores → enviar formulario
+        form.submit();
+    });
+
+});
+</script>
 
 @endsection

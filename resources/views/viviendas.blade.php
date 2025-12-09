@@ -5,7 +5,7 @@
 <h1 class="titulo text-center">Viviendas</h1>
 
 <div class="mb-3">
-    <a href="{{ route('formularioViviendasIns') }}" class="btn btn-success">+ Crear Vivienda</a>
+    <a href="{{ route('formularioViviendasIns') }}" class="btn btn-success">Crear</a>
 </div>
 
 <div class="d-flex justify-content-center flex-wrap gap-2 my-3">
@@ -84,14 +84,21 @@
 
 <script>
     function mostrarVivienda(id) {
-        // ocultar todos
+        // Ocultar todos los bloques
         @foreach($viviendas as $viv)
         document.getElementById('bloque-vivienda-{{ $viv->id }}').style.display = 'none';
         @endforeach
 
-        // mostrar el elegido
+        // Mostrar el bloque elegido
         document.getElementById('bloque-vivienda-' + id).style.display = 'block';
     }
+
+    // Mostrar la primera vivienda al cargar la página
+    window.addEventListener('DOMContentLoaded', (event) => {
+        @if(count($viviendas) > 0)
+            mostrarVivienda({{ $viviendas[0]->id }});
+        @endif
+    });
 </script>
 
 <script>

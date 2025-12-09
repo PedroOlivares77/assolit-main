@@ -73,7 +73,7 @@ public function iniciarSesion(Request $request){
             $usuario->save();
             Auth::login($usuario);
             //cambiar para que redirija a mi-cuenta
-            return redirect('/');
+            return redirect('/')->with('success', 'Usuario creado correctamente');
 
         }else{
             //la contraseña no coincide

@@ -4,7 +4,7 @@
         <h1 class="titulo text-center">Users</h1>
         <div class="tabla" >
             <div>
-                <a href="{{route('crearUser')}}" class="btn btn-success botonInsertar">+ Crear</a>
+                <a href="{{route('crearUser')}}" class="btn btn-success botonInsertar">Crear</a>
             </div>
             <table class="tUser table table-striped table-hover" id="tUser">
                 <thead>

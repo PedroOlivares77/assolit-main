@@ -2,7 +2,7 @@
 @section('titulo','Área Psiquiatra')
 @section('contenido')
 
-<h2 class="text-center mb-4">Usuarios de tus viviendas</h2>
+<h2 class="text-center mb-4 mt-4">Usuarios de tus viviendas</h2>
 
 @if(session('ok'))
 <div class="alert alert-success text-center">{{ session('ok') }}</div>
@@ -18,13 +18,13 @@
     @endforeach
 </div>
 
-<div class="d-flex flex-wrap justify-content-center gap-4">
+<div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
 @foreach($usuarios as $usuario)
     @if($usuario->id_vivienda != $selectedViviendaId)
         @continue
     @endif
 
-    <div class="card shadow p-4" style="width: 350px; border-left: 5px solid #6c757d;">
+    <div class="card shadow p-4 d-flex flex-column h-100" style="width: 350px; border-left: 5px solid #6c757d;">
 
         <!-- Imagen genérica -->
         <div class="text-center mb-3">
@@ -58,7 +58,7 @@
                     <option value="">Selecciona un medicamento</option>
                     @foreach($medicamentos as $med)
                         @if(!$usuario->medicamentos->contains('id', $med->id))
-                            <option value="{{ $med->id }}">{{ $med->nombre }}</option>
+                            <option value="{{ $med->id }}">{{ $med->nombre }} ({{ $med->dosis }}mg)</option>
                         @endif
                     @endforeach
                 </select>
@@ -67,10 +67,10 @@
             </div>
 
             <!-- Medicamentos actuales -->
-            <div id="medicamentos-container-{{ $usuario->id }}">
+            <div id="medicamentos-container-{{ $usuario->id }}" class="flex-grow-1 overflow-auto mb-2">
             @foreach($usuario->medicamentos as $med)
                 <div class="border rounded p-2 mb-2 bg-light d-flex justify-content-between align-items-center" data-med-id="{{ $med->id }}">
-                    <span>{{ $med->nombre }}</span>
+                    <span>{{ $med->nombre }} ({{ $med->dosis }}mg)</span>
                     <button type="button" class="btn btn-sm btn-danger p-1" onclick="eliminarMedicamento(this)">✕</button>
                 </div>
                 <div class="d-flex gap-2 mb-2">

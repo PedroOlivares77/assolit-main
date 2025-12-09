@@ -5,7 +5,7 @@
 <h1 class="titulo text-center mb-3">Ofertas de Empleo</h1>
 
 <div class="text-center mb-4">
-    <button id="btn-crear" class="btn btn-success">+ Crear Oferta</button>
+    <button id="btn-crear" class="btn btn-success">Crear</button>
 </div>
 
 <div id="posts-container" class="d-flex flex-wrap justify-content-start gap-3">

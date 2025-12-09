@@ -4,7 +4,7 @@
         <h1 class="titulo text-center">Medicamentos</h1>
         <div class="tabla" >
             <div>
-                <a href="{{route('crearMedicamento')}}" class="btn btn-success botonInsertar">+ Crear</a>
+                <a href="{{route('crearMedicamento')}}" class="btn btn-success botonInsertar">Crear</a>
             </div>
             <table class="tMedicamento table table-striped table-hover" id="tMedicamento">
                 <thead>

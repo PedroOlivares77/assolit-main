@@ -5,7 +5,7 @@
 <h1 class="titulo text-center mb-5" >Opiniones</h1>
 
 <div class="text-center mb-3">
-    <button id="btn-crear" class="btn btn-success">+ Crear Opinión</button>
+    <button id="btn-crear" class="btn btn-success">Crear</button>
 </div>
 
 <div class="postit-container d-flex flex-wrap justify-content-center" style="gap: 1rem; max-width: 840px; margin:auto;">

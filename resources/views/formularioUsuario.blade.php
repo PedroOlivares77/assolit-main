@@ -37,12 +37,13 @@
                         <select name="id_vivienda" id="id_vivienda" class="form-control">
                             @if (empty($usuario))
                             <option value="" selected disabled>---- Elija una opción ----</option>
-                            <@foreach($viviendas as $vivienda)
+                            @foreach($viviendas as $vivienda)
                                 <option value="{{ $vivienda->id }}">{{ $vivienda->nombre }}</option>
                                 @endforeach
                                 @else
-                                <@foreach($viviendas as $vivienda)
-                                    <option value="{{ $vivienda->id }}" {{$vivienda->id == $usuario->vivienda->id ? 'selected' : '' }}>
+                                @foreach($viviendas as $vivienda)
+                                <option value="{{ $vivienda->id }}" 
+                                    {{ $vivienda->id == ($usuario->id_vivienda ?? null) ? 'selected' : '' }}>
                                     {{ $vivienda->nombre }}
                                     </option>
                                     @endforeach
@@ -134,34 +135,55 @@
             window.eliminarMedicamento = function(id) {
                 $(`#medicamento-bloque-${id}`).remove();
             }
+            $('.form-validate').on('submit', function(e) {
+        e.preventDefault(); // Evitar envío hasta validar
 
+        // Limpiar errores previos
+        $('#texto-error').html('');
+        $('input, select').css('border-color', ''); 
+
+        // Obtener valores
+        const nombre = $('#nombre').val().trim();
+        const apellidos = $('#apellidos').val().trim();
+        const fecha_nacimiento = $('#fecha_nacimiento').val();
+        const patologia = $('#patologia').val().trim();
+        const id_vivienda = $('#id_vivienda').val();
+
+        let error = '';
+
+        // Validaciones
+        if (!nombre) {
+            error = 'El nombre es obligatorio.';
+            $('#nombre').css('border-color', 'red').focus();
+        } else if (!apellidos) {
+            error = 'Los apellidos son obligatorios.';
+            $('#apellidos').css('border-color', 'red').focus();
+        } else if (!fecha_nacimiento) {
+            error = 'La fecha de nacimiento es obligatoria.';
+            $('#fecha_nacimiento').css('border-color', 'red').focus();
+        } else {
+            const hoy = new Date();
+            const fechaInput = new Date(fecha_nacimiento);
+            if (fechaInput >= hoy.setHours(0,0,0,0)) {
+                error = 'La fecha de nacimiento no puede ser hoy ni futuro.';
+                $('#fecha_nacimiento').css('border-color', 'red').focus();
+            }
+        } 
+        if (!error && !patologia) {
+            error = 'La patología es obligatoria.';
+            $('#patologia').css('border-color', 'red').focus();
+        } else if (!error && !id_vivienda) {
+            error = 'Debe seleccionar una vivienda.';
+            $('#id_vivienda').css('border-color', 'red').focus();
+        }
+
+        if (error) {
+            $('#texto-error').html(error);
+            return false;
+        } else {
+            this.submit(); // enviar formulario si todo está correcto
+        }
+    });
         });
-        // $(document).ready(function(){
-
-        //     $("#nombre").focus();
-
-        //     $(".form-validate :submit").click(function (e){
-
-        //         $('#texto-error').html("");
-        //         $('select, input').css("border-color", "var(--bs-border-color)"); 
-
-        //         e.preventDefault();
-        //         if($("#nombre").val().trim() === ""){
-        //             $("#nombre").focus();
-        //             $('#nombre').css("border-color", "red");
-        //             $('#texto-error').html("El nombre no puede estar vacío.");
-        //         }else{
-        //             if(!$("#continente").val()){
-        //                 $("#continente").focus();
-        //                 $('#continente').css("border-color", "red");
-        //                 $('#texto-error').html("Debe elegir un continente.");
-        //             }else{
-        //                 $(".form-validate").submit()
-        //             }
-        //         }
-        //     });
-
-
-        // });
     </script>
     @endsection
