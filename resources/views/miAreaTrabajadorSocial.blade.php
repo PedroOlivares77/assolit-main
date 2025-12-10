@@ -6,7 +6,7 @@
 
 <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
     @foreach($usuarios as $usuario)
-    <div class="card shadow p-4 d-flex flex-column h-100" style="width: 350px; border-left: 5px solid #6c757d;">
+    <div class="usuario-card shadow p-4 d-flex flex-column h-100" style="width: 350px; border-left: 5px solid #6c757d;">
 
         <!-- IMAGEN DE PERFIL GENERICA -->
         <div class="text-center mb-3">

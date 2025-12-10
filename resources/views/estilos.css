@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+#headerUsuario .allura-regular {
+  font-family: "Allura", cursive;
+  font-weight: 400;
+  font-style: bold;
+  font-size: 130%;
+}
+
+#headerUsuario {
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#mainUsuario {
+  width: 100%;
+}
+
+#logo {
+  width: 60px;
+  height: 60px;
+}
+
+#section-busqueda {
+  color: white;
+}
+
+.divider {
+  border-left: 1px solid white;
+  height: 100%;
+}
+
+.social-icons i {
+  font-size: 24px;
+  margin: 0 10px;
+  color: white;
+}
+
+footer .logo {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F7F9F9;
+  /* cian muy suave */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.navbar {
+  position: relative;
+  /* Necesario para que el dropdown se posicione correctamente */
+  z-index: 1100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(224, 247, 250, 0.85);
+  /* cian muy suave transparente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.4rem;
+  color: #007C91 !important;
+  padding-left: 0;
+  /* cian más oscuro para texto */
+}
+
+.navbar .nav-link {
+  color: #007C91;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .dropdown-item:hover {
+  color: #004D59;
+}
+
+.navbar .dropdown-menu {
+  z-index: 1200;
+  /* Siempre por encima del navbar y carrusel */
+}
+
+.modal-dialog {
+    margin-top: 150px; /* Ajusta según altura de navbar */
+}
+/* Glass footer */
+footer {
+  backdrop-filter: blur(10px);
+  background-color: rgba(224, 247, 250, 0.85);
+  /* cian muy suave transparente */
+  padding: 40px 0;
+  margin-top: auto;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#logo-footer {
+  width: 150px;
+  height: 150px;
+}
+
+footer a {
+  color: #007C91;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #004D59;
+}
+
+.footer-social i {
+  color: #007C91;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social i:hover {
+  color: #004D59;
+  transform: scale(1.2);
+}
+
+#footerUsuario .col-md-3.d-flex.flex-column a {
+  padding-left: 20px;
+  /* Ajusta para mover a la derecha */
+}
+
+#footerUsuario .col-md-3.d-flex.flex-column span.allura-regular {
+  font-size: 200%;
+  /* Más grande que el original 150% */
+}
+
+#footerUsuario img {
+  margin-left: 26px;
+  /* mueve solo la imagen */
+}
+
+#footerUsuario .allura-regular {
+  font-family: "Allura", cursive;
+  font-size: 3rem;
+  /* tamaño más grande */
+  font-weight: 400;
+  /* más grosor, la fuente se ve mejor */
+  display: inline-block;
+  /* asegura que el margin funcione */
+  /* evita que se vea muy apretado */
+}
+
+.contenido-admin {
+  margin-top: 0.2%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: auto;
+  gap: 0px;
+  width: 100%;
+  min-height: 75vh;
+}
+
+.aside-admin {
+  grid-column: 1/2;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: #B0E0E6;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aside-admin ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-admin ul li {
+    text-align: center;          /* Centrar texto */
+    margin: 20px 0;              /* Espacio arriba y abajo aumentando */
+}
+
+.aside-admin ul li a {
+    display: block;
+    padding: 15px 10px;          /* Aumentar área clickable */
+    text-decoration: none;
+    color: #007C91;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.aside-admin ul li a:hover {
+    background-color: #98d3da;
+    transform: scale(1.03);
+}
+
+#titulo-admin {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem 0;
+    background-color: #f0f8fa; /* fondo clarito */
+    border-top: 3px solid #007C91; /* línea superior */
+    border-bottom: 3px solid #007C91; /* línea inferior */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#titulo-admin h2 {
+    font-family: 'Roboto', sans-serif; /* fuente elegante y legible */
+    font-weight: 700;
+    font-size: 2rem;
+    color: #004D59; /* un cian más oscuro que resalte */
+    margin: 0;
+}
+
+#titulo-admin .titulo-imagen {
+    max-width: 65%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+.info {
+  padding: 3%;
+  grid-column: 2/3;
+  background-color: white;
+}
+
+.aside-admin ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aside-admin li {
+  margin: 8px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.aside-admin a {
+  text-decoration: none;
+  color: #007C91;
+  font-weight: bold;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.aside-admin a:hover {
+  background-color: #e9ecef;
+  color: #00582c;
+}
+
+.carousel-item {
+  position: relative;
+  max-height: 500px;
+  /* Ajusta según el diseño deseado */
+  overflow: hidden;
+  /* Para que no sobresalga nada */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  /* Ocupa la altura del carrusel, pero mantiene proporción */
+  object-fit: contain;
+  /* Imagen completa, sin recorte ni zoom */
+  display: block;
+}
+
+.carousel-caption {
+  z-index: 2;
+  /* Debajo del dropdown pero encima de la imagen */
+}
+
+.highlight-frase {
+  font-family: 'Pacifico', cursive;
+  display: inline-block;
+  font-size: 2.5rem;           /* grande */
+  font-weight: 700;             /* negrita */
+  color: #007C91;               /* color destacado (azul suave) */
+  text-decoration: none;        /* quita subrayado */
+  padding: 10px 20px;
+}
+
+.fila-cuenta {
+  height: 100%;
+  background-color: rgb(45, 47, 51);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .contenido-admin {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .aside-admin {
+    width: 100%;
+  }
+
+  .info {
+    width: 100%;
+    overflow-y: auto;
+  }
+
+  .carousel-item {
+    max-height: 300px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+}
+
+.tarjeta {
+  min-height: 150px;
+  background: linear-gradient(to left, white 50%, #007C91 50%);
+  background-size: 201%;
+  background-position: right;
+  transition: background-position 0.5s ease-out;
+}
+
+.tarjeta:hover {
+  background-position: left;
+  color: white;
+}
+
+.enlace-card {
+  text-decoration: none;
+  color: black;
+}
+
+.tarjeta:hover .enlace-card {
+  color: white;
+}
+
+.card-noticia {
+  min-height: 100px;
+}

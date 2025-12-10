@@ -35,7 +35,7 @@
             </div>
 
             <div class="mb-3 d-flex justify-content-center">
-                <button class="btn btn-success my-3 w-50" type="submit" id="enviar">Registrarse</button>
+                <button class="btn btn-primary my-3 w-50" type="submit" id="enviar">Registrarse</button>
             </div>
         </form>
         <div id="texto-error" class="text-center text-danger"></div>

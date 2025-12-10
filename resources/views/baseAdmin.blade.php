@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ asset('assets/media/img/favicon.png') }}" type="image/png">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-5.3.6/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="{{asset ('assets/css/estilos.css') }}" />
     <title>@yield('titulo')</title>
     <script src="https://kit.fontawesome.com/9f4bf3af88.js" crossorigin="anonymous"></script>
@@ -36,7 +37,8 @@
                         <li class="nav-item mx-4"><a class="nav-link" href="{{route('index')}}">Inicio</a></li>
                         <li class="nav-item mx-4"><a class="nav-link" href="{{route('viviendasTuteladas')}}">Viviendas Tuteladas</a></li>
                         <li class="nav-item mx-4"><a class="nav-link" href="{{route('comoTrabajamos')}}">Cómo trabajamos</a></li>
-                        <li class="nav-item mx-4"><a class="nav-link" href="{{route('empleoVoluntariado')}}">Empleo/Voluntariado</a></li>
+                        <li class="nav-item mx-4"><a class="nav-link" href="{{route('voluntariado')}}">Voluntariado</a></li>
+                        <li class="nav-item mx-4"><a class="nav-link" href="{{route('empleo')}}">Empleo</a></li>
                         <li class="nav-item mx-4"><a class="nav-link" href="{{route('conocenos')}}">Conócenos</a></li>
 
                         @if(auth()->user())
@@ -102,14 +104,15 @@
             </div>
 
             <!-- Contacto -->
-            <div class="col-md-3 mb-4 mb-md-0 ps-4">
-                <p><a href="{{route('conocenos')}}">Contacto</a></p>
-                <p><a href="{{route('empleoVoluntariado')}}">Voluntariado</a></p>
+           <div class="col-md-3 mb-4 mb-md-0 ps-4">
+                <p><a href="{{route('empleo')}}">Empleo</a></p>
+                <p><a href="{{route('voluntariado')}}">Voluntariado</a></p>
                 <p><a href="{{route('viviendasTuteladas')}}">Viviendas</a></p>
             </div>
 
             <!-- Redes y boletín -->
             <div class="col-md-3 mb-4 mb-md-0 ps-4">
+                <p><a href="{{route('conocenos')}}">Contacto</a></p>
                 <p class="mb-4">Redes sociales:</p>
                 <div class="d-flex gap-4 footer-social">
                     <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>

@@ -24,7 +24,8 @@ Route::get('/registro', [SesionController::class, 'mostrarRegistro'])->name('for
 
 Route::get('/viviendas', [NavegacionController::class, 'viviendas'])->name("viviendasTuteladas");
 Route::get('/como-trabajamos', [NavegacionController::class, 'comoTrabajamos'])->name("comoTrabajamos");
-Route::get('/empleo', [NavegacionController::class, 'empleoVoluntariado'])->name("empleoVoluntariado");
+Route::get('/empleo', [NavegacionController::class, 'empleo'])->name("empleo");
+Route::get('/voluntariado', [NavegacionController::class, 'voluntariado'])->name("voluntariado");
 Route::get('/conocenos', [NavegacionController::class, 'conocenos'])->name("conocenos");
 
 

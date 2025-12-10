@@ -24,7 +24,7 @@
         @continue
     @endif
 
-    <div class="card shadow p-4 d-flex flex-column h-100" style="width: 350px; border-left: 5px solid #6c757d;">
+    <div class="usuario-card shadow p-4 d-flex flex-column h-100" style="width: 350px; border-left: 5px solid #6c757d;">
 
         <!-- Imagen genérica -->
         <div class="text-center mb-3">
