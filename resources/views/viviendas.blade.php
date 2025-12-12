@@ -102,18 +102,20 @@
 </script>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
     @foreach($viviendas as $viv)
-    new DataTable('#dt-users-{{ $viv->id }}', {
-        language: {
-            url: 'https://cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json'
-        }
-    });
-    new DataTable('#dt-usuarios-{{ $viv->id }}', {
-        language: {
-            url: 'https://cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json'
-        }
-    });
+        new DataTable('#dt-users-{{ $viv->id }}', {
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json'
+            }
+        });
+        new DataTable('#dt-usuarios-{{ $viv->id }}', {
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json'
+            }
+        });
     @endforeach
+});
 </script>
 
 @endsection

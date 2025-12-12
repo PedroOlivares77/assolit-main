@@ -74,9 +74,8 @@
     </div>
 </div>
 <script>
-$(document).ready(function () {
-
-    var tabla = new DataTable('#tablaRoles', {
+$(document).ready(function() {
+    var tabla = $('#tablaRoles').DataTable({
         language: { url: 'https://cdn.datatables.net/plug-ins/2.2.2/i18n/es-ES.json' },
         ajax: {
             url: '{{ route("rolesListar") }}',
@@ -88,8 +87,6 @@ $(document).ready(function () {
         columns: [
             { data: 'id' },
             { data: 'tipo' },
-            @if(auth()->user())
-            @if(!auth()->user()->hasRole('psiquiatra') && !auth()->user()->hasRole('trabajador_social'))
             {
                 data: null,
                 render: function(data){
@@ -99,10 +96,9 @@ $(document).ready(function () {
                     `;
                 }
             }
-            @endif
-            @endif
         ]
     });
+
 
     // CREAR
     $('#btn-crear-rol').click(function() {
@@ -189,5 +185,4 @@ $(document).ready(function () {
 
 });
 </script>
-
 @endsection

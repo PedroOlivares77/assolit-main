@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('assets/media/img/favicon.png') }}" type="image/png">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap-5.3.6/dist/css/bootstrap.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
     <link rel="stylesheet" type="text/css" href="{{asset ('assets/css/estilos.css') }}" />
-    <title>@yield('titulo')</title>
-    <script src="https://kit.fontawesome.com/9f4bf3af88.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <title>@yield('titulo')</title>
 </head>
 
 <body>
@@ -81,15 +77,22 @@
             </div>
 
             <!-- Contacto -->
+            
             <div class="col-md-3 mb-4 mb-md-0 ps-4">
                 <p><a href="{{route('empleo')}}">Empleo</a></p>
                 <p><a href="{{route('voluntariado')}}">Voluntariado</a></p>
                 <p><a href="{{route('viviendasTuteladas')}}">Viviendas</a></p>
+                <p><a href="{{ route('comoTrabajamos')}}#ingreso-tarifas">Tarifas</a></p>
             </div>
-
-            <!-- Redes y boletín -->
+            <div class="col-md-3 mb-4 mb-md-0 ps-4 ">
+                <p><a href="#">Política de privacidad</a></p>
+                <p><a href="#">Aviso legal</a></p>
+                <p><a href="#">Declaración de accesibilidad</a></p>
+            </div>
+            
             <div class="col-md-3 mb-4 mb-md-0 ps-4">
-                <p><a href="{{route('conocenos')}}">Contacto</a></p>
+                <p>📞 +34 654 312 987</a></p>
+                <p>✉️ info@assolit.com</a></p>
                 <p class="mb-4">Redes sociales:</p>
                 <div class="d-flex gap-4 footer-social">
                     <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
@@ -97,22 +100,17 @@
                     <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
                 </div>
             </div>
+            <!-- Redes y boletín -->
 
             <!-- Legal -->
-            <div class="col-md-3 mb-4 mb-md-0 ps-4">
-                <p><a href="#">Política de privacidad</a></p>
-                <p><a href="#">Aviso legal</a></p>
-                <p><a href="#">Declaración de accesibilidad</a></p>
-            </div>
         </div>
         <div class="text-center mt-4">&copy; {{ date('Y') }} Assolit. Todos los derechos reservados.</div>
     </div>
 </footer>
-
-<script src="{{ asset('/vendor/jQuery/jquery-3.7.1.min.js') }}"></script>
-<script src="{{ asset('/vendor/bootstrap-5.3.6/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 @yield('js')
 </body>
 
