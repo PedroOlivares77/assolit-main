@@ -337,7 +337,7 @@ footer a:hover {
 /* Título diferenciado */
 .carousel-caption .titulo {
     font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2.5vw, 2.4rem);
     font-weight: 800;
     margin-bottom: 0.4rem;
     color: #000 !important;
@@ -346,7 +346,7 @@ footer a:hover {
 /* Texto descriptivo */
 .carousel-caption .texto {
     font-family: "Inter", sans-serif;
-    font-size: 1.15rem;
+    font-size: clamp(0.85rem, 1.8vw, 1.3rem);
     font-weight: 500;
     color: #222 !important;
     line-height: 1.4;
@@ -424,10 +424,10 @@ footer a:hover {
 }
 
 .cards-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
     gap: 1rem;
-    flex-wrap: wrap;
     /* Hace responsive en pantallas pequeñas */
     padding-bottom: 2.5rem;
 }
@@ -860,63 +860,6 @@ footer a:hover {
     font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-    .contenido-admin {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-    }
-
-    .aside-admin {
-        width: 100%;
-    }
-
-    .info {
-        width: 100%;
-        overflow-y: auto;
-    }
-
-    .carousel-item {
-        max-height: 300px;
-    }
-
-    .carousel-caption {
-        max-width: 90%;
-    }
-
-    .carousel-caption .titulo {
-        font-size: 1.5rem;
-    }
-
-    .carousel-caption .texto {
-        font-size: 1rem;
-    }
-
-    .area-cliente-row {
-        flex-direction: column;
-    }
-
-    .area-cliente-img-wrapper img {
-        border-radius: 12px 12px 0 0;
-    }
-
-    .area-cliente-content {
-        border-radius: 0 0 12px 12px;
-    }
-    .empleo-bloque-alternado {
-        flex-direction: column;
-        text-align: center;
-    }
-    .empleo-bloque-alternado.reverse .empleo-bloque-imagen {
-        order: 0;
-        margin: 0 0 1.5rem 0;
-    }
-    .empleo-bloque-imagen {
-        width: 90%;
-        margin: 0 auto 1.5rem auto;
-        height: auto;
-    }
-}
-
 .tarjeta {
     min-height: 150px;
     background: linear-gradient(to left, white 50%, #007c91 50%);
@@ -1091,4 +1034,733 @@ footer a:hover {
     font-size: 1.3rem;
     color: #005f70;
     margin-top: 1rem;
+}
+
+.conocenos-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.conocenos-title {
+    font-family: Courier, monospace;
+    font-size: 2.6rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #007c91;
+}
+
+.conocenos-separador {
+    width: 100px;
+    height: 3px;
+    background-color: #007c91;
+    border: none;
+    border-radius: 2px;
+    margin: 0.8rem auto 2.5rem auto;
+}
+
+.conocenos-texto {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    text-align: justify;
+    color: #222;
+    transition: transform 0.3s ease;
+}
+
+.conocenos-texto:hover {
+    transform: translateY(-4px);
+}
+
+.conocenos-row-equal {
+    display: flex;
+    align-items: stretch;
+}
+
+/* Imagen ajustada */
+.conocenos-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre bien sin deformar */
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.mv-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.mv-title {
+    font-family: Courier, monospace;
+    font-size: 2rem;
+    font-style: italic;
+    color: #007c91;
+    font-weight: 700;
+}
+
+.mv-separator {
+    width: 130px;
+    height: 3px;
+    background-color: #007c91;
+    border: none;
+    border-radius: 3px;
+    margin: 0 auto 40px auto;
+}
+
+/* CONTENEDOR CENTRAL */
+.mv-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas Misión & Visión */
+.mv-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    width: 45%;
+    min-width: 300px;
+    border-left: 6px solid #007c91;
+}
+
+.mv-card h3 {
+    font-family: Courier, monospace;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* Valores alrededor */
+.mv-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.mv-value:nth-child(5),
+.mv-value:nth-child(6) {
+    grid-column: 2 / span 2; /* Ocupan columnas 2 y 3 para quedar centrados */
+}
+
+.mv-value {
+    background: white;
+    padding: 1.6rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-top: 4px solid #00bcd4;
+}
+
+/* Hover suave y elegante */
+.mv-card:hover,
+.mv-value:hover {
+    transform: translateY(-6px);
+    transition: 0.3s ease;
+}
+
+.finalidad-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.finalidad-img-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.finalidad-img {
+    width: 100%;
+    height: 200px; /* altura alargada */
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.finalidad-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    margin-top: -10px; /* sube sobre la foto */
+    width: 100%; /* mismo ancho que la imagen */
+}
+
+.finalidad-subtitle {
+    font-family: Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.finalidad-block p {
+    line-height: 1.7;
+    color: #222;
+    text-align: justify;
+}
+
+.opiniones-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.opiniones-title {
+    font-family: Courier, monospace;
+    font-size: 2rem;
+    font-style: italic;
+    color: #007c91;
+    font-weight: 700;
+}
+
+.opiniones-separator {
+    width: 120px;
+    height: 3px;
+    background-color: #007c91;
+    border: none;
+    border-radius: 3px;
+    margin: 0 auto 40px auto;
+}
+
+/* Contenedor de postits */
+.opiniones-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.opiniones-title {
+    font-family: Courier, monospace;
+    font-size: 2rem;
+    font-style: italic;
+    color: #007c91;
+    font-weight: 700;
+}
+
+.opiniones-separator {
+    width: 120px;
+    height: 3px;
+    background-color: #007c91;
+    border: none;
+    border-radius: 3px;
+    margin: 0 auto 40px auto;
+}
+
+/* Contenedor de postits */
+.opiniones-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.opiniones-title {
+    font-family: Courier, monospace;
+    font-size: 2rem;
+    font-style: italic;
+    color: #007c91;
+    font-weight: 700;
+}
+
+.opiniones-separator {
+    width: 120px;
+    height: 3px;
+    background-color: #007c91;
+    border: none;
+    border-radius: 3px;
+    margin: 0 auto 40px auto;
+}
+
+/* Contenedor de postits con CSS Grid */
+.postit-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 3rem; /* más separación horizontal y vertical */
+    max-width: 1000px;
+    margin: auto;
+    justify-items: center; /* centra los postits en cada columna */
+}
+
+/* Post-it individual */
+.postit {
+    width: 280px;
+    min-height: 280px;
+    background-color: #fffacd;
+    padding: 1.8rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.postit:hover {
+    transform: translateY(-6px);
+}
+/* Contenido central (autor + texto) */
+.postit-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente el contenido */
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #222;
+    flex-grow: 1; /* ocupa todo el espacio posible */
+}
+
+.postit-autor {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.postit-text {
+    margin-bottom: 0;
+}
+
+/* Valoración al final */
+.postit-rating {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: auto; /* fuerza a ir al final del post-it */
+}
+
+.como-trabajamos-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.ct-title {
+    font-family: Courier, monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #007c91;
+}
+
+.ct-separator {
+    width: 130px;
+    height: 3px;
+    background-color: #007c91;
+    border: none;
+    border-radius: 3px;
+    margin: 1rem auto 50px auto;
+}
+
+.ct-intro {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #222;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+/* Triángulo de círculos */
+.ct-circles-triangle {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.ct-circles-triangle .ct-circle {
+    width: 220px;
+    height: 220px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #007c91;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ct-circles-triangle .ct-circle:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Modal overlay */
+.ct-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenido del modal */
+.ct-modal-content {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 14px;
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: zoomIn 0.3s ease;
+}
+
+.ct-modal-content h3 {
+    color: #007c91;
+    margin-bottom: 1rem;
+}
+
+.ct-modal-content ul {
+    padding-left: 1.2rem;
+}
+
+.ct-modal-content li {
+    margin-bottom: 0.8rem;
+}
+
+/* Botón de cerrar */
+.ct-close {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.metodologia-container {
+    gap: 2rem;
+}
+
+.metodologia-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.metodologia-tabs {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    padding: 1.5rem 1rem 1.5rem 1.5rem; /* menos padding a la derecha */
+    max-height: 600px; /* altura fija */
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    background: #f7f9f9;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: #007c91;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tabs-content {
+    flex: 1;
+    overflow-y: auto; /* scroll si el contenido es largo */
+    padding-right: 5px; /* evita que el texto quede pegado al borde */
+}
+
+.tabs-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.tabs-content li {
+    margin-bottom: 0.6rem;
+}
+
+.tab-btn.active {
+    background: #007c91;
+    color: white;
+}
+
+.tabs-content .tab-content {
+    display: none;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.tabs-content .tab-content.active {
+    display: block;
+}
+
+.actividades-section {
+    background: #f7f9f9;
+    font-family: "Nunito", sans-serif;
+}
+
+.actividades-row {
+    gap: 1.5rem;
+}
+
+.actividad-img img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    object-fit: cover;
+}
+
+.actividades-desc p {
+    max-width: 1100px;
+    margin: auto;
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #222;
+}
+
+.actividades-desc ul li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.ingreso-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Tarjetas */
+.ingreso-cards {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.ingreso-card {
+    background: white;
+    padding: 1.6rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-top: 5px solid #00bcd4;
+    font-weight: 600;
+    color: #007c91;
+    cursor: pointer;
+    transition: 0.25s ease;
+    min-width: 260px;
+    text-align: center;
+}
+
+.ingreso-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Panel dinámico */
+.ingreso-panel {
+    background: white;
+    border-radius: 14px;
+    padding: 2rem;
+    max-width: 950px;
+    margin: auto;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    text-align: left;
+    display: none; /* Se activa cuando clicas */
+    animation: fadeIn 0.4s ease;
+}
+
+.ingreso-panel-content ul {
+    margin-left: 1.2rem;
+    line-height: 1.7;
+}
+
+.ingreso-panel-content li {
+    margin-top: 0.7rem;
+}
+
+.info-ingreso-panel {
+    background: rgba(224, 247, 250, 0.85);
+    border-left: 8px solid #007c91;
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.info-ingreso-text h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #004d58;
+}
+
+.info-ingreso-text p {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.info-ingreso-btn {
+    background: #007c91;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.info-ingreso-btn:hover {
+    background: #005f6e;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación */
+@keyframes zoomIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 500px) {
+    .viviendas-section {
+        padding: 0 1rem;
+    }
+    .card {
+        flex: 1 1 100%;
+    }
+    .card img {
+        height: 180px;  /* Se ve mejor en móvil */
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido-admin {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .aside-admin {
+        width: 100%;
+    }
+
+    .info {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .carousel-item {
+        max-height: 300px;
+    }
+
+
+    .viviendas-section {
+        padding: 0 2rem;
+    }
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+
+    .area-cliente-row {
+        flex-direction: column;
+    }
+
+    .area-cliente-img-wrapper img {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .area-cliente-content {
+        border-radius: 0 0 12px 12px;
+    }
+    .empleo-bloque-alternado {
+        flex-direction: column;
+        text-align: center;
+    }
+    .empleo-bloque-alternado.reverse .empleo-bloque-imagen {
+        order: 0;
+        margin: 0 0 1.5rem 0;
+    }
+    .empleo-bloque-imagen {
+        width: 90%;
+        margin: 0 auto 1.5rem auto;
+        height: auto;
+    }
+
+    .conocenos-row-equal {
+        flex-direction: column;
+    }
+
+    .conocenos-img {
+        height: auto;
+        max-height: 350px;
+    }
+
+    .mv-center-container {
+        flex-direction: column;
+    }
+    .mv-card {
+        width: 100%;
+    }
+
+    .postit-container {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+        gap: 2rem;
+    }
+
+    .ct-circles-triangle {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 calc(33.33% - 1rem);
+    }
+}
+
+@media (max-width: 1024px) {
+    .postit-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        gap: 2.5rem;
+    }
+
+    .ct-circles-triangle {
+        gap: 2rem;
+    }
+
+    .card {
+        flex: 1 1 calc(25% - 1rem);
+    }
 }

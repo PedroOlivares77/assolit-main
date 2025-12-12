@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Opinion;
 use App\Models\Post_empleo;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,8 @@ class NavegacionController extends Controller
 
     public function conocenos()
     {
-        return view("conocenos");
+        $opiniones = Opinion::all();
+        return view("conocenos", ['opiniones' => $opiniones]);
     }
 
     public function noPermitido()

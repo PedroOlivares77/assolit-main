@@ -1,7 +1,16 @@
 @extends('baseUsuario')
 @section('titulo', 'Área Cliente')
 @section('contenido')
+<div class="info-ingreso-panel mb-5">
+    <div class="info-ingreso-text">
+        <h4>¿Quieres saber más sobre el ingreso en la vivienda y las tarifas?</h4>
+        <p>Consulta toda la información detallada sobre requisitos, proceso de admisión y precios.</p>
+    </div>
 
+<a href="{{ route('comoTrabajamos')}}#ingreso-tarifas" class="btn btn-primary btn-lg info-ingreso-btn">
+    Ver información
+</a>
+</div>
 <h2 class="text-center mb-4 mt-4">Mis solicitudes enviadas</h2>
 
 @if(session('ok'))
@@ -30,7 +39,7 @@
 
 {{-- FORMULARIO NUEVA SOLICITUD --}}
 <h3 class="text-center mb-4">Enviar nueva solicitud</h3>
-<form id="solicitudForm" action="{{ route('miSolicitudEnviar') }}" method="post" class="card p-5 shadow mx-auto mb-4" style="max-width:800px">
+<form id="solicitudForm" action="{{ route('miSolicitudEnviar') }}" method="post" class="card p-5 shadow mx-auto mb-5" style="max-width:800px">
     @csrf
 
     <div class="mb-3">
@@ -107,6 +116,7 @@
         this.submit(); // enviar formulario si todo es correcto
     }
 });
+
 </script>
 
 @endsection
