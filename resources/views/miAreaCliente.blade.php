@@ -11,31 +11,33 @@
     Ver información
 </a>
 </div>
-<h2 class="text-center mb-4 mt-4">Mis solicitudes enviadas</h2>
+@if($solicitudes->isNotEmpty())
+    <h2 class="text-center mb-4 mt-4">Mis solicitudes enviadas</h2>
 
-@if(session('ok'))
-<div class="alert alert-success text-center">{{ session('ok') }}</div>
+    @if(session('ok'))
+        <div class="alert alert-success text-center">{{ session('ok') }}</div>
+    @endif
+
+    {{-- LISTADO DE SOLICITUDES --}}
+    <div class="d-flex flex-column gap-4">
+        @foreach($solicitudes as $solicitud)
+            <div class="card p-4 shadow w-100" style="max-width:800px; margin:auto;">
+                <h5 class="mb-2">{{ $solicitud->nombre }}</h5>
+                <p class="mb-1">{{ $solicitud->mensaje }}</p>
+                <p class="mb-1"><b>Estado:</b> 
+                    @if($solicitud->estado == 'Nuevo')
+                        <span class="badge bg-warning text-dark">{{ $solicitud->estado }}</span>
+                    @else
+                        <span class="badge bg-success text-white">{{ $solicitud->estado }}</span>
+                    @endif
+                </p>
+                <small class="text-muted">Enviada: {{ $solicitud->created_at }}</small>
+            </div>
+        @endforeach
+    </div>
+
+    <hr class="my-5">
 @endif
-
-{{-- LISTADO DE SOLICITUDES --}}
-<div class="d-flex flex-column gap-4">
-@foreach($solicitudes as $solicitud)
-<div class="card p-4 shadow w-100" style="max-width:800px; margin:auto;">
-    <h5 class="mb-2">{{ $solicitud->nombre }}</h5>
-    <p class="mb-1">{{ $solicitud->mensaje }}</p>
-    <p class="mb-1"><b>Estado:</b> 
-        @if($solicitud->estado == 'Nuevo')
-            <span class="badge bg-warning text-dark">{{ $solicitud->estado }}</span>
-        @else
-            <span class="badge bg-success text-white">{{ $solicitud->estado }}</span>
-        @endif
-    </p>
-    <small class="text-muted">Enviada: {{ $solicitud->created_at }}</small>
-</div>
-@endforeach
-</div>
-
-<hr class="my-5">
 
 {{-- FORMULARIO NUEVA SOLICITUD --}}
 <h3 class="text-center mb-4">Enviar nueva solicitud</h3>

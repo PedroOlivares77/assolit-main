@@ -92,21 +92,17 @@
     </div>
 
     <!-- VALORES alrededor -->
-    <div class="mv-values-grid">
-
-      <div class="mv-value">Integridad, respeto a principios éticos y honestidad</div>
-
-      <div class="mv-value">Dedicación personal y vocación de servicio</div>
-
-      <div class="mv-value">Orientación a la persona</div>
-
-      <div class="mv-value">Profesionalidad, formación continua e innovación</div>
-
-      <div class="mv-value">Compromiso. Relaciones personales basadas en la confianza y el respeto</div>
-
-      <div class="mv-value">Mejora continua: sistema integrado de calidad y medio ambiente</div>
-
-    </div>
+  <div class="mv-values-card">
+  <h3>Valores</h3>
+  <ul>
+    <li>Integridad, respeto a principios éticos y honestidad</li>
+    <li>Dedicación personal y vocación de servicio</li>
+    <li>Orientación a la persona</li>
+    <li>Profesionalidad, formación continua e innovación</li>
+    <li>Compromiso. Relaciones personales basadas en la confianza y el respeto</li>
+    <li>Mejora continua: sistema integrado de calidad y medio ambiente</li>
+  </ul>
+</div>
 
   </div>
 </section>

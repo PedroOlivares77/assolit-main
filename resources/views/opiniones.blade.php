@@ -25,6 +25,8 @@
             </form>
         </div>
         <form action="{{ route('editarOpinion', $opinion->id) }}" method="POST" class="postit-form mt-2" style="display:none;">
+            <button type="button" class="btn-close cancel-edit" aria-label="Cerrar"
+            style="position:absolute; top:10px; right:10px;"></button>
             @csrf
             <textarea name="comentario" class="form-control mb-2" style="height:100px;">{{ $opinion->comentario }}</textarea>
             <input type="number" name="valoracion" class="form-control mb-2" value="{{ $opinion->valoracion }}" min="1" max="5">
@@ -46,6 +48,14 @@ document.querySelectorAll('.btn-editar').forEach(function(btn) {
     });
 });
 
+document.querySelectorAll('.cancel-edit').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const postit = btn.closest('.postit');
+        postit.querySelector('.postit-content').style.display = 'block';
+        postit.querySelector('.postit-form').style.display = 'none';
+    });
+});
+
 document.getElementById('btn-crear').addEventListener('click', function() {
     const container = document.querySelector('.postit-container');
     if (container.children.length >= 6) return alert('Máximo 6 postits');
@@ -53,6 +63,8 @@ document.getElementById('btn-crear').addEventListener('click', function() {
     postit.className = 'postit p-4 shadow rounded position-relative';
     postit.style = "width:260px; height:260px; background-color:#b0f7d3;";
     postit.innerHTML = `
+    <button type="button" class="btn-close cancel-create"
+            style="position:absolute; top:10px; right:10px;"></button>
         <form action="{{ route('crearOpinion') }}" method="POST">
             @csrf
             <input type="hidden" name="id_vivienda" value="1">
@@ -63,6 +75,9 @@ document.getElementById('btn-crear').addEventListener('click', function() {
         </form>
     `;
     container.prepend(postit);
+    postit.querySelector('.cancel-create').addEventListener('click', function () {
+    postit.remove();
+});
 });
 </script>
 @endsection

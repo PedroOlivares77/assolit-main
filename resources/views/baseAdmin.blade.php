@@ -8,9 +8,11 @@
     <link rel="icon" href="{{ asset('assets/media/img/favicon.png') }}" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
     <link rel="stylesheet" type="text/css" href="{{asset ('assets/css/estilos.css') }}" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <title>@yield('titulo')</title>
 </head>
 
@@ -91,8 +93,8 @@
     <div class="container-fluid">
         <div class="row text-dark">
             <!-- Logo y nombre a la izquierda -->
-            <div class="col-md-3 mb-4 mb-md-0 d-flex flex-column justify-content-start ps-4">
-                <a href="{{ route('index') }}" class="d-flex flex-column align-items-start text-decoration-none">
+            <div class="col-md-3 mb-4 mb-md-0 d-flex flex-column justify-content-start ps-md-4 text-center text-md-start">
+                <a href="{{ route('index') }}" class="d-flex flex-column align-items-center align-items-md-start text-decoration-none">
                     <img src="{{ asset('assets/media/img/assolitLogo.png') }}" alt="Logo" height="70" class="mb-2">
                     <p class="allura-regular">Assolit</p>
                 </a>
@@ -100,19 +102,19 @@
 
             <!-- Contacto -->
             
-            <div class="col-md-3 mb-4 mb-md-0 ps-4">
+            <div class="col-md-3 mb-4 mb-md-0 ps-md-4 text-center text-md-start">
                 <p><a href="{{route('empleo')}}">Empleo</a></p>
                 <p><a href="{{route('voluntariado')}}">Voluntariado</a></p>
                 <p><a href="{{route('viviendasTuteladas')}}">Viviendas</a></p>
                 <p><a href="{{ route('comoTrabajamos')}}#ingreso-tarifas">Tarifas</a></p>
             </div>
-            <div class="col-md-3 mb-4 mb-md-0 ps-4 ">
+            <div class="col-md-3 mb-4 mb-md-0 ps-md-4 text-center text-md-start">
                 <p><a href="#">Política de privacidad</a></p>
                 <p><a href="#">Aviso legal</a></p>
                 <p><a href="#">Declaración de accesibilidad</a></p>
             </div>
             
-            <div class="col-md-3 mb-4 mb-md-0 ps-4">
+            <div class="col-md-3 mb-4 mb-md-0 ps-md-4 text-center text-md-start">
                 <p>📞 +34 654 312 987</a></p>
                 <p>✉️ info@assolit.com</a></p>
                 <p class="mb-4">Redes sociales:</p>
@@ -132,7 +134,6 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     @yield('js')
 </body>
 

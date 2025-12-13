@@ -73,6 +73,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
 <script>
 $(document).ready(function() {
     var tabla = $('#tablaRoles').DataTable({

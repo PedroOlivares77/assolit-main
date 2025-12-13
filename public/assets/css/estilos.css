@@ -698,36 +698,40 @@ footer a:hover {
 
 /* Contenedor de logos */
 
-.logo-name {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem; /* tamaño pequeño */
-    font-style: italic;
-    text-align: center;
-    margin-top: 0.5rem;
-    color: #555; /* gris suave */
+.logos-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centra los logos en pantallas grandes */
+    gap: 2rem;
 }
 
-/* Ajuste para que el logo y nombre estén en columna */
+/* Cada logo */
 .logo-item {
-    flex: 1 1 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* alinea siempre al principio */
-    align-items: center;
-    min-width: 60px;
+    flex: 1 1 150px; /* mínimo 150px, crece si hay espacio */
+    max-width: 180px; /* límite máximo para que no se hagan gigantes */
+    text-align: center;
+    margin-bottom: 2rem;
     transition: transform 0.3s ease;
 }
 
-/* Aseguramos que todas las imágenes tengan la misma altura */
 .logo-item img {
-    max-width: 50%;
-    height: 200px; /* altura uniforme para todos los logos */
-    object-fit: contain;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
     transition: transform 0.3s ease;
 }
 
 .logo-item:hover img {
     transform: scale(1.1);
+}
+
+.logo-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555;
+    margin-top: 0.5rem;
 }
 
 .vivienda-title {
@@ -1140,31 +1144,55 @@ footer a:hover {
 }
 
 /* Valores alrededor */
-.mv-values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.mv-value:nth-child(5),
-.mv-value:nth-child(6) {
-    grid-column: 2 / span 2; /* Ocupan columnas 2 y 3 para quedar centrados */
-}
-
-.mv-value {
+.mv-values-card {
     background: white;
-    padding: 1.6rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    text-align: center;
+    padding: 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    max-width: calc(45% * 2 + 30px); /* mismo ancho que Misión + Visión */
+    margin: 0 auto;
+    border-top: 6px solid #00bcd4;
+}
+
+.mv-values-card h3 {
+    font-family: Courier, monospace;
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.mv-values-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 16px;
+}
+
+.mv-values-card li {
+    position: relative;
+    padding-left: 22px;
     font-size: 1rem;
     line-height: 1.6;
-    border-top: 4px solid #00bcd4;
+    text-align: left;
 }
 
+/* Punto elegante */
+.mv-values-card li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+
 /* Hover suave y elegante */
-.mv-card:hover,
+.mv-values-card:hover,
 .mv-value:hover {
     transform: translateY(-6px);
     transition: 0.3s ease;
@@ -1663,6 +1691,10 @@ footer a:hover {
     .card img {
         height: 180px;  /* Se ve mejor en móvil */
     }
+
+        .logo-item {
+        flex: 1 1 90%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1742,11 +1774,21 @@ footer a:hover {
         flex-direction: column;
         gap: 2.5rem;
     }
+    
+    .logo-item {
+        flex: 1 1 45%;
+        max-width: none;
+    }
 }
 
 @media (max-width: 992px) {
     .card {
         flex: 1 1 calc(33.33% - 1rem);
+    }
+
+    .logo-item {
+        flex: 1 1 120px;
+        max-width: 140px;
     }
 }
 
@@ -1762,5 +1804,10 @@ footer a:hover {
 
     .card {
         flex: 1 1 calc(25% - 1rem);
+    }
+
+        .logo-item {
+        flex: 1 1 140px;
+        max-width: 160px;
     }
 }
