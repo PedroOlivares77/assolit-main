@@ -25,12 +25,12 @@
         <p class="mb-1">📍 Lugar: {{ $viv->lugar }}</p>
         <p class="mb-1">👥 Capacidad: {{ $viv->capacidad }}</p>
         <a href="{{ route('formularioViviendaEd', $viv->id) }}">
-           <button class="btn btn-sm btn-warning" > Editar </button>
+           <button class="btn btn-sm btn-warning mt-2" > Editar </button>
         </a>
         <form action="{{ route('eliminarVivienda', $viv->id) }}" method="POST" style="display:inline-block;">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-danger">
+            <button type="submit" class="btn btn-sm btn-danger mt-3">
                 Eliminar
             </button>
         </form>
