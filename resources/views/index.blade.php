@@ -80,7 +80,7 @@
     <!-- Card 2 -->
     <div class="card">
       <a href="{{route('viviendasTuteladas')}}">
-      <img src="{{asset('assets/media/img/olivo_2.png')}}" alt="Foto de Hogar Encina">
+      <img src="{{asset('assets/media/img/encina_1.jpg')}}" alt="Foto de Hogar Encina">
       <div class="card-content">
         <h4>Hogar Encina</h4>
         <p>Ambiente seguro que fomenta la autonomía de cada persona.</p>
@@ -91,7 +91,7 @@
     <!-- Card 3 -->
     <div class="card">
       <a href="{{route('viviendasTuteladas')}}">
-      <img src="{{asset('assets/media/img/olivo_3.png')}}" alt="Foto de Hogar Sauce">
+      <img src="{{asset('assets/media/img/cerezo_1.jpg')}}" alt="Foto de Hogar Sauce">
       <div class="card-content">
         <h4>Hogar Sauce</h4>
         <p>Programas diarios que permiten desarrollar habilidades.</p>
@@ -102,7 +102,7 @@
     <!-- Card 4 -->
     <div class="card">
       <a href="{{route('viviendasTuteladas')}}">
-      <img src="{{asset('assets/media/img/olivo_4.png')}}" alt="Foto de Hogar Cerezo">
+      <img src="{{asset('assets/media/img/sauce_1.jpg')}}" alt="Foto de Hogar Cerezo">
       <div class="card-content">
         <h4>Hogar Cerezo</h4>
         <p>Entorno cálido y seguro con acompañamiento constante.</p>
@@ -113,7 +113,7 @@
     <!-- Card 5 -->
     <div class="card">
       <a href="{{route('viviendasTuteladas')}}">
-      <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Foto de Hogar Almendro">
+      <img src="{{asset('assets/media/img/almendro_1.jpg')}}" alt="Foto de Hogar Almendro">
       <div class="card-content">
         <h4>Hogar Almendro</h4>
         <p>Espacio inclusivo que fomenta la vida autónoma y social.</p>
