@@ -25,7 +25,7 @@
             <img src="{{asset('assets/media/img/olivo_3.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
             <img src="{{asset('assets/media/img/olivo_4.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
             <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/olivo_6.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
         </div>
     </section>
 
@@ -41,12 +41,12 @@
         </p>
 
         <div class="vivienda-photos d-flex flex-wrap gap-2 mb-5">
-            <img src="{{asset('assets/media/img/olivo_1.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_2.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_3.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_4.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/encina_1.jpg')}}" alt="Hogar Encina" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/encina_2.jpg')}}" alt="Hogar Encina" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/encina_3.jpg')}}" alt="Hogar Encina" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/encina_4.jpg')}}" alt="Hogar Encina" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/encina_5.jpg')}}" alt="Hogar Encina" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/encina_6.jpg')}}" alt="Hogar Encina" class="vivienda-img" style="max-width:200px; cursor:pointer;">
         </div>
     </section>
 
@@ -61,12 +61,12 @@
             Hogar Sauce propone un programa de actividades variadas, incluyendo clases de gimnasia suave, talleres de manualidades, música y baile adaptado, excursiones a la playa o al parque, fomentando tanto la socialización como la estimulación cognitiva y física. El objetivo es crear un entorno seguro y activo, donde cada residente pueda disfrutar de la vida diaria con autonomía y compañía.
         </p>
         <div class="vivienda-photos d-flex flex-wrap gap-2 mb-5">
-            <img src="{{asset('assets/media/img/olivo_1.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_2.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_3.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_4.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/sauce_1.jpg')}}" alt="Hogar Sauce" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/sauce_2.jpg')}}" alt="Hogar Sauce" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/sauce_3.jpg')}}" alt="Hogar Sauce" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/sauce_4.jpg')}}" alt="Hogar Sauce" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/sauce_5.jpg')}}" alt="Hogar Sauce" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/sauce_6.jpg')}}" alt="Hogar Sauce" class="vivienda-img" style="max-width:200px; cursor:pointer;">
         </div>
     </section>
 
@@ -81,12 +81,12 @@
             El hogar organiza actividades adaptadas, como talleres de memoria, gimnasia ligera, clases de cocina, cine adaptado y música, buscando estimular tanto el cuerpo como la mente. Las excursiones cortas y las actividades culturales completan una rutina enriquecedora y segura, que respeta los ritmos y capacidades de cada persona.
         </p>
         <div class="vivienda-photos d-flex flex-wrap gap-2 mb-5">
-            <img src="{{asset('assets/media/img/olivo_1.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_2.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_3.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_4.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/cerezo_1.jpg')}}" alt="Hogar Cerezo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/cerezo_2.jpg')}}" alt="Hogar Cerezo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/cerezo_3.jpg')}}" alt="Hogar Cerezo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/cerezo_4.jpg')}}" alt="Hogar Cerezo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/cerezo_5.jpg')}}" alt="Hogar Cerezo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/cerezo_6.jpg')}}" alt="Hogar Cerezo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
         </div>
     </section>
 
@@ -101,12 +101,12 @@
             El hogar propone un completo programa de actividades adaptadas: talleres de cocina, gimnasia suave, sesiones de musicoterapia, juegos de mesa y excursiones cortas, fomentando la interacción social, la estimulación cognitiva y el bienestar emocional. Todo está diseñado para que cada residente pueda sentirse seguro, acompañado y activo, disfrutando de un hogar cálido y acogedor.
         </p>
         <div class="vivienda-photos d-flex flex-wrap gap-2 mb-5">
-            <img src="{{asset('assets/media/img/olivo_1.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_2.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_3.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_4.png')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
-            <img src="{{asset('assets/media/img/olivo_5.jpg')}}" alt="Hogar Olivo" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/almendro_1.jpg')}}" alt="Hogar Almendro" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/almendro_2.jpg')}}" alt="Hogar Almendro" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/almendro_3.jpg')}}" alt="Hogar Almendro" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/almendro_4.jpg')}}" alt="Hogar Almendro" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/almendro_5.jpg')}}" alt="Hogar Almendro" class="vivienda-img" style="max-width:200px; cursor:pointer;">
+            <img src="{{asset('assets/media/img/almendro_6.jpg')}}" alt="Hogar Almendro" class="vivienda-img" style="max-width:200px; cursor:pointer;">
         </div>
     </section>
 
@@ -152,7 +152,7 @@
     ];
 
     var viviendaIcon = L.icon({
-        iconUrl: 'assets/media/img/favicon.png', // tu imagen de marcador
+        iconUrl: 'assets/media/img/mapa.png', // tu imagen de marcador
         iconSize: [40, 40], // tamaño del icono
         iconAnchor: [20, 40], // punto del icono que se coloca en las coordenadas
         popupAnchor: [0, -40] // punto donde aparecerá el popup relativo al icono
