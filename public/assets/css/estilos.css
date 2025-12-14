@@ -1466,11 +1466,7 @@ footer a:hover {
 
 /* Botón de cerrar */
 .ct-close {
-    position: absolute;
-    top: 20px; right: 30px;
-    font-size: 2rem;
-    color: #333;
-    cursor: pointer;
+    display: none;
 }
 
 .metodologia-container {
