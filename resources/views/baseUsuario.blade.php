@@ -96,7 +96,7 @@
                 <p>📞 +34 654 312 987</a></p>
                 <p>✉️ info@assolit.com</a></p>
                 <p class="mb-4">Redes sociales:</p>
-                <div class="d-flex gap-4 footer-social">
+                <div class="d-flex justify-content-center justify-content-md-start gap-4 footer-social">
                     <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
