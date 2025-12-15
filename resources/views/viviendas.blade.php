@@ -35,7 +35,7 @@
             </button>
         </form>
     </div>
-
+    <h4 class="titulo text-center">Trabajadores</h4>
     <table class="table table-bordered small vivienda-dt mt-3" id="dt-users-{{ $viv->id }}">
         <thead>
             <tr>
@@ -56,7 +56,7 @@
             @endforeach
         </tbody>
     </table>
-
+     <h4 class="titulo text-center">Usuarios Residentes</h4>
     <table class="table table-striped small vivienda-dt mt-3" id="dt-usuarios-{{ $viv->id }}">
         <thead>
             <tr>
