@@ -33,7 +33,7 @@ class User extends Authenticatable
 
     public function viviendas()
     {
-        return $this->belongsToMany(Vivienda::class, 'viviendas_users', 'id_vivienda', 'id_user', 'id', 'id');
+        return $this->belongsToMany(Vivienda::class, 'viviendas_users', 'id_user' , 'id_vivienda', 'id', 'id');
     }
 
     public function vivienda()
